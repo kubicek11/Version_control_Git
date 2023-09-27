@@ -11,7 +11,7 @@ Certainly! Here's the information about big repositories and Git LFS presented i
 
 
 ![graphic](https://github.com/kubicek11/seminar_2/assets/125492837/e68eb078-667c-4fa0-a954-f61f8afbe998)
-![graphic](https://github.com/kubicek11/seminar_2/assets/125492837/f8341085-7771-4bba-a934-4972b8dacc97)
+
 
 
 
