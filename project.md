@@ -9,6 +9,15 @@ Certainly! Here's the information about big repositories and Git LFS presented i
 - **Storage**: Storing and transferring large repositories can consume significant storage space and bandwidth.
 - **Collaboration**: Collaborating with a large repository can be cumbersome, as users need to download the entire history and files, even if they're only interested in a subset.
 
+
+![graphic](https://github.com/kubicek11/seminar_2/assets/125492837/e68eb078-667c-4fa0-a954-f61f8afbe998)
+![graphic](https://github.com/kubicek11/seminar_2/assets/125492837/f8341085-7771-4bba-a934-4972b8dacc97)
+
+
+
+
+
+
 **Solutions**:
 - **Git LFS**: Use Git LFS to track large binary files separately from the repository, reducing the repository's size.
 - **Partial Clone**: Git supports partial clones, allowing users to fetch only the parts of the repository they need.
