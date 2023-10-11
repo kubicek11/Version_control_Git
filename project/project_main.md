@@ -7,16 +7,19 @@ Git extension used to manage large files.
 + Open-source Git extension designed to handle large files more efficiently in Git repositories
 
 ### Installation
-1. Install Git (in the case you do not have Git installed) from the official website:  
-https://git-scm.com/
 
-2. Open Git Bash
+1. If you don't have Git installed, download it from the official website:
+   [Git Official Website](https://git-scm.com/)
+
+2. Open Git Bash.
 
 3. Install Git LFS by running the following command:
 
+```bash
 git lfs install
+```
 
-4. Now that the Git LFS is installed you can use it to track large files in your repositories
+4. Now that the Git LFS is installed, you can use it to track large files in your repositories.
 
 ### Configuration
 
