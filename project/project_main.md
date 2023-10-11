@@ -8,12 +8,12 @@ Git extension used to manage large files.
 
 ### Installation
 
-1. If you don't have Git installed, download it from the official website:
+1. If you don't have Git installed, download it from:
    [Git Official Website](https://git-scm.com/)
 
 2. Open Git Bash.
 
-3. Install Git LFS by running the following command:
+3. Install Git LFS by running the following command in the Git Bash:
 
 ```bash
 git lfs install
