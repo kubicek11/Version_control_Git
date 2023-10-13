@@ -53,4 +53,7 @@ Whenever you add or commit large files with extensions specified in .gitattribut
 + Official Website: https://git-lfs.com/
 + Git LFS x GitHub: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
 
++ Other sources:
+https://www.atlassian.com/git/tutorials/git-lfs
+
 + GitHub Markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
