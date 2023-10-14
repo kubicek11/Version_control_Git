@@ -44,15 +44,19 @@ Whenever you add or commit large files with extensions specified in .gitattribut
 ### Benefits
 
 1. Reduced Repository Size
+
 Git LFS reduces the size of Git repositories by storing the large files externally.
 
 2. Faster Cloning and Fetching
+
 Smaller repositories allow for quicker cloning and fetching of code and assets.
 
 3. Easy Configuration
+
 Configuring Git LFS is fast and easy using a .gitattributes file
 
 4. Seamless Integration 
+
 Git LFS integrates well with most common Git hosting services like GitHub.
 
 ### Practical Examples
