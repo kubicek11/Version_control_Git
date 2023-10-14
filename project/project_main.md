@@ -1,5 +1,7 @@
 # Git Large File Storage (LFS)
 
+![](logo.png)
+
 ### What is Git LFS?
 
 Git extension used to manage large files.
@@ -41,6 +43,18 @@ Whenever you add or commit large files with extensions specified in .gitattribut
 
 ### Benefits
 
+1. Reduced Repository Size
+Git LFS reduces the size of Git repositories by storing the large files externally.
+
+2. Faster Cloning and Fetching
+Smaller repositories allow for quicker cloning and fetching of code and assets.
+
+3. Easy Configuration
+Configuring Git LFS is fast and easy using a .gitattributes file
+
+4. Seamless Integration 
+Git LFS integrates well with most common Git hosting services like GitHub.
+
 ### Practical Examples
 
 ### Troubleshooting
@@ -55,5 +69,7 @@ Whenever you add or commit large files with extensions specified in .gitattribut
 
 + Other sources:
 https://www.atlassian.com/git/tutorials/git-lfs
+
+https://jasonzurita.com/smaller-repo-size-using-git-lfs/
 
 + GitHub Markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
