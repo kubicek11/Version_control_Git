@@ -62,9 +62,27 @@ Git LFS integrates well with most common Git hosting services like GitHub.
 ### Practical Examples
 
 ### Troubleshooting
+1. Ensure that Git LFS is installed and configured on your system by running:
+
+```bash
+git lfs version
+```
+
+3. Check that the .gitattributes file correctly specifies which files should be tracked by Git LFS. 
+
+4. Make sure the specific file exceeds the LFS threshold for tracking (usually 100 MB). 
+
+5. If you're having authentication problems, check if you have access to the Git LFS server.
+
+6. Ensure that the Git LFS server you're using is operational.
+   
+7. Ensure that you're using the latest version of Git LFS. Update it if not.
+   
+8. If all else fails, you can clean up your repository and re-clone it.
+
+9. Check Git error logs for specific error messages that can help reaolve the problem.
 
 ### Conclusion
-
 
 ### Resources:
 + Link to the GitHub repository of Git LFS: https://github.com/git-lfs/git-lfs
