@@ -1,3 +1,11 @@
+# Git large repositories
+
+###We can distinguish two types of big repositories
+
+1. Repositories with long history (containing a lont of commits over long periods of time)
+
+2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be compressed files, videos, images, or any other non-text data).
+
 # Git Large File Storage (LFS)
 
 ![](logo.png)
