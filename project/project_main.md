@@ -42,96 +42,88 @@ It cleans just one specified branch from our repo without other branches. It mig
 
 ![](logo.png)
 
-### What is Git LFS?
+## Table of Contents
 
-Git extension used to manage large files.
+- [What is Git LFS?](#what-is-git-lfs)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Benefits](#benefits)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting](#troubleshooting)
+- [Conclusion](#conclusion)
+- [Resources](#resources)
 
-+ Open-source Git extension designed to handle large files more efficiently in Git repositories
+## What is Git LFS?
+- [Introduction](#what-is-git-lfs)
+  - Open-source Git extension designed to handle large files more efficiently in Git repositories
 
-### Installation
+## Installation
+- [Git Installation](#installation)
+  - If you don't have Git installed, download it from: [Git Official Website](https://git-scm.com/)
+- [Installing Git LFS](#installation)
+  - Open Git Bash.
+  - Install Git LFS by running the following command in the Git Bash:
+    ```bash
+    git lfs install
+    ```
 
-1. If you don't have Git installed, download it from:
-   [Git Official Website](https://git-scm.com/)
+## Configuration
+- [Initializing a Repository](#configuration)
+  - Initialize a repository (or use an existing one)
+- [Specifying Files to Track](#configuration)
+  - Create or edit a .gitattributes file in your repository and add entries to this file for the file types you want to manage with Git LFS. For example:
+    ```bash
+    *.mp4 filter=lfs diff=lfs merge=lfs -text
+    ```
+- [Remote Repository Considerations](#configuration)
+  - If you are using a remote repository, make sure it has Git LFS support to properly manage large files.
 
-2. Open Git Bash.
+## Usage
+- [After Configuration](#usage)
+  - After a successful configuration, you can track and commit files as usual.
+- [Automated Tracking](#usage)
+  - Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
 
-3. Install Git LFS by running the following command in the Git Bash:
+## Benefits
+- [Reduced Repository Size](#benefits)
+  - Git LFS reduces the size of Git repositories by storing the large files externally.
+- [Faster Cloning and Fetching](#benefits)
+  - Smaller repositories allow for quicker cloning and fetching of code and assets.
+- [Easy Configuration](#benefits)
+  - Configuring Git LFS is fast and easy using a .gitattributes file
+- [Seamless Integration](#benefits)
+  - Git LFS integrates well with most common Git hosting services like GitHub.
 
-```bash
-git lfs install
-```
+## Practical Examples
+- [Example Usage Scenarios](#practical-examples)
 
-4. Now that the Git LFS is installed, you can use it to track large files in your repositories.
+## Troubleshooting
+- [Troubleshooting Guide](#troubleshooting)
+  - Ensure that Git LFS is installed and configured on your system by running:
+    ```bash
+    git lfs version
+    ```
+  - Check that the .gitattributes file correctly specifies which files should be tracked by Git LFS.
+  - Make sure the specific file exceeds the LFS threshold for tracking (usually 100 MB).
+  - If you're having authentication problems, check if you have access to the Git LFS server.
+  - Ensure that the Git LFS server you're using is operational.
+  - Ensure that you're using the latest version of Git LFS. Update it if not.
+  - If all else fails, you can clean up your repository and re-clone it.
+  - Check Git error logs for specific error messages that can help resolve the problem.
 
-### Configuration
-1. Initialize a repository (or use an existing one)
+## Conclusion
+- [Final Thoughts](#conclusion)
 
-2. Specify which files to track:
-
-Create or edit a .gitattributes file in your repository and add entries to this file for the file types you want to manage with Git LFS. For example:
-
-```bash
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-```
-
-If you are using a remote repository, make sure it has Git LFS support to properly manage large files.
-   
-### Usage
-After a successfull configuration you can track and commit files as usual.
-
-Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
-
-### Benefits
-
-1. Reduced Repository Size
-
-Git LFS reduces the size of Git repositories by storing the large files externally.
-
-2. Faster Cloning and Fetching
-
-Smaller repositories allow for quicker cloning and fetching of code and assets.
-
-3. Easy Configuration
-
-Configuring Git LFS is fast and easy using a .gitattributes file
-
-4. Seamless Integration 
-
-Git LFS integrates well with most common Git hosting services like GitHub.
-
-### Practical Examples
-
-### Troubleshooting
-1. Ensure that Git LFS is installed and configured on your system by running:
-
-```bash
-git lfs version
-```
-
-3. Check that the .gitattributes file correctly specifies which files should be tracked by Git LFS. 
-
-4. Make sure the specific file exceeds the LFS threshold for tracking (usually 100 MB). 
-
-5. If you're having authentication problems, check if you have access to the Git LFS server.
-
-6. Ensure that the Git LFS server you're using is operational.
-   
-7. Ensure that you're using the latest version of Git LFS. Update it if not.
-   
-8. If all else fails, you can clean up your repository and re-clone it.
-
-9. Check Git error logs for specific error messages that can help reaolve the problem.
-
-### Conclusion
-
-### Resources:
-+ Link to the GitHub repository of Git LFS: https://github.com/git-lfs/git-lfs
-+ Official Website: https://git-lfs.com/
-+ Git LFS x GitHub: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
-
-+ Other sources:
-https://www.atlassian.com/git/tutorials/git-lfs
-
-https://jasonzurita.com/smaller-repo-size-using-git-lfs/
-
-+ GitHub Markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+## Resources
+- [Git LFS GitHub Repository](#resources)
+  - Link to the GitHub repository of Git LFS: [GitHub Repository](https://github.com/git-lfs/git-lfs)
+- [Official Website](#resources)
+  - Official Website: [Git LFS](https://git-lfs.com/)
+- [Git LFS x GitHub](#resources)
+  - Git LFS x GitHub: [GitHub Documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage)
+- [Other Sources](#resources)
+  - [Atlassian Git LFS Tutorial](https://www.atlassian.com/git/tutorials/git-lfs)
+  - [Smaller Repository Size](https://jasonzurita.com/smaller-repo-size-using-git-lfs/)
+- [GitHub Markdown](#resources)
+  - [GitHub Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
