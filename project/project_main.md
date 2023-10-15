@@ -1,10 +1,18 @@
 # Git large repositories
 
-###We can distinguish two types of big repositories
+Having large repositories creates problems that may influence the performance of our work. We can encounter these difficulties while working with remote repositories (cloning, pushing, etc.)
+
+Besides that, platforms that provide various functionalities related to version control might have size limits for files that you want to push.
+
+ - GitHub has file size limits that include a warning for files larger than 50 MiB and a strict prohibition against files larger than 100 MiB. Additionally, GitHub recommends that entire repositories be smaller than 1GB and strongly advises keeping repositories smaller than 5GB, although these recommendations are not strict size limits.
++ GitHub large files: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+### We can distinguish two types of big repositories
 
 1. Repositories with long history (containing a lont of commits over long periods of time)
 
-2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be compressed files, videos, images, or any other non-text data).
+2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be: compressed files, videos, images, or any other non-text data).
+
 
 # Git Large File Storage (LFS)
 
