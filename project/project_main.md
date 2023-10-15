@@ -1,3 +1,43 @@
+# Git large repositories
+
+Having large repositories creates problems that may influence the performance of our work. We can encounter these difficulties while working with remote repositories (cloning, pushing, etc.)
+
+Besides that, platforms that provide various functionalities related to version control might have size limits for files that you want to push.
+
+ - GitHub has file size limits that include a warning for files larger than 50 MiB and a strict prohibition against files larger than 100 MiB. Additionally, GitHub recommends that entire repositories be smaller than 1GB and strongly advises keeping repositories smaller than 5GB, although these recommendations are not strict size limits.
++ GitHub large files: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+### We can distinguish two types of big repositories:
+
+1. Repositories with long history (containing a lont of commits over long periods of time)
+
+2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be: compressed files, videos, images, or any other non-text data).
+
+### Solving problems with large repositories:
+
+ 1.The case with long histories:
+ - Sometimes we need keep the history of our repository intact. In that case to solve complications while cloning repository we can clone just n latest commits. We can use:
+
+
+```bash
+git clone --depth [depth] [remote-url]
+```
+This operation creates so called shallow clone and can save some time cloning repos with lots of commits.
+
+- Alternative for shallow clone is cloning just one branch. The command looks like this:
+
+
+```bash
+git clone [remote url] --branch [branch_name] --single-branch [folder]
+```
+It cleans just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
+
+- Lastly, if we have time for that, we can try cleaning up our repo. For that the useful function might be "filter-branch". By using this command you are able to go through your history and try to indemnify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
+
+2. Case with huge binary assets:
+
+- There might be solutions for large files in repositories. But if we know that we are going to work with huge binary assets then we should use Large File Storage (LFS)
+
 # Git Large File Storage (LFS)
 
 ![](logo.png)
