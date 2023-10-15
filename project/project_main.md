@@ -7,11 +7,30 @@ Besides that, platforms that provide various functionalities related to version 
  - GitHub has file size limits that include a warning for files larger than 50 MiB and a strict prohibition against files larger than 100 MiB. Additionally, GitHub recommends that entire repositories be smaller than 1GB and strongly advises keeping repositories smaller than 5GB, although these recommendations are not strict size limits.
 + GitHub large files: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
 
-### We can distinguish two types of big repositories
+### We can distinguish two types of big repositories:
 
 1. Repositories with long history (containing a lont of commits over long periods of time)
 
 2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be: compressed files, videos, images, or any other non-text data).
+
+### Solving problems with large repositories:
+
+ 1.The case with long histories:
+ - Sometimes we need keep the history of our repository intact. In that case to solve complications while cloning repository we can clone just n latest commits. We can use:
+
+
+```bash
+git clone --depth [depth] [remote-url]
+```
+This operation creates so called shallow clone and can save some time cloning repos with lots of commits.
+
+- Alternative for shallow clone is cloning just one branch. The command looks like this:
+
+
+```bash
+git clone [remote url] --branch [branch_name] --single-branch [folder]
+```
+It cleans just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
 
 
 # Git Large File Storage (LFS)
