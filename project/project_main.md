@@ -32,6 +32,11 @@ git clone [remote url] --branch [branch_name] --single-branch [folder]
 ```
 It cleans just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
 
+- Lastly, if we have time for that, we can try cleaning up our repo. For that the useful function might be "filter-branch". By using this command you are able to go through your history and try to indemnify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
+
+2. Case with huge binary assets:
+
+- There might be solutions for large files in repositories. But if we know that we are going to work with huge binary assets then we should use Large File Storage (LFS)
 
 # Git Large File Storage (LFS)
 
