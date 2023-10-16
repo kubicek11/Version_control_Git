@@ -130,7 +130,7 @@ It clones just one specified branch from our repo without other branches. It mig
   - Git LFS integrates well with most common Git hosting services like GitHub.
 
 ## Practical Example
-- [Example Usage Scenario](#practical-example)
+- [Example Usage](#practical-example)
 
     ```bash
     git lfs install
@@ -144,7 +144,7 @@ It clones just one specified branch from our repo without other branches. It mig
     git push origin main
 
     ```
-    
+
 ## Troubleshooting
 - [Troubleshooting Guide](#troubleshooting)
   - Ensure that Git LFS is installed and configured on your system by running:
