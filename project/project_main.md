@@ -1,4 +1,20 @@
-# Git large repositories
+# Git Large Repositories
+
+![](logo.png)
+
+## Table of Contents
+
+- [Git Large Repositories](#git-large-repositories)
+- [Git Large File Storage (LFS)](#git-large-file-storage-lfs)
+  - [What is Git LFS?](#what-is-git-lfs)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+  - [Benefits](#benefits)
+  - [Practical Examples](#practical-examples)
+  - [Troubleshooting](#troubleshooting)
+  - [Conclusion](#conclusion)
+  - [Resources](#resources)
 
 Having large repositories creates problems that may influence the performance of our work. We can encounter these difficulties while working with remote repositories (cloning, pushing, etc.).
 
@@ -38,21 +54,8 @@ It clones just one specified branch from our repo without other branches. It mig
 
 - There might be solutions for large files in repositories. But if we know that we are going to work with huge binary assets, then we should use Large File Storage (LFS).
 
+
 # Git Large File Storage (LFS)
-
-![](logo.png)
-
-## Table of Contents
-
-- [What is Git LFS?](#what-is-git-lfs)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Benefits](#benefits)
-- [Practical Examples](#practical-examples)
-- [Troubleshooting](#troubleshooting)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
 
 ## What is Git LFS?
 - [Introduction](#what-is-git-lfs)
@@ -127,3 +130,5 @@ It clones just one specified branch from our repo without other branches. It mig
   - [Smaller Repository Size](https://jasonzurita.com/smaller-repo-size-using-git-lfs/)
 - [GitHub Markdown](#resources)
   - [GitHub Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Picture](#resources)
+  - https://jasonzurita.com/smaller-repo-size-using-git-lfs/
