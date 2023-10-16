@@ -58,7 +58,7 @@ It clones just one specified branch from our repo without other branches. It mig
 # Git Large File Storage (LFS)
 
 ## What is Git LFS?
-- [Introduction](#what-is-git-lfs)
+
   - Open-source Git extension designed to handle large files more efficiently in Git repositories
 
 ## Installation
@@ -137,8 +137,10 @@ It clones just one specified branch from our repo without other branches. It mig
 
     git lfs track "*.jpg"
 
-    git add large_file.jpg
+    git add .gitattributes
+    git commit -m "Add .gitattributes for Git LFS tracking"
 
+    git add large_file.jpg
     git commit -m "Add a large image file"
 
     git push origin main
