@@ -1,6 +1,22 @@
-# Git large repositories
+# Git Large Repositories
 
-Having large repositories creates problems that may influence the performance of our work. We can encounter these difficulties while working with remote repositories (cloning, pushing, etc.)
+![](logo.png)
+
+## Table of Contents
+
+- [Git Large Repositories](#git-large-repositories)
+- [Git Large File Storage (LFS)](#git-large-file-storage-lfs)
+  - [What is Git LFS?](#what-is-git-lfs)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Usage](#usage)
+  - [Benefits](#benefits)
+  - [Practical Example](#practical-example)
+  - [Troubleshooting](#troubleshooting)
+  - [Conclusion](#conclusion)
+  - [Resources](#resources)
+
+Having large repositories creates problems that may influence the performance of our work. We can encounter these difficulties while working with remote repositories (cloning, pushing, etc.).
 
 Besides that, platforms that provide various functionalities related to version control might have size limits for files that you want to push.
 
@@ -9,13 +25,13 @@ Besides that, platforms that provide various functionalities related to version 
 
 ### We can distinguish two types of big repositories:
 
-1. Repositories with long history (containing a lont of commits over long periods of time)
+1. Repositories with long history (containing a lot of commits over long periods of time)
 
 2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be: compressed files, videos, images, or any other non-text data).
 
 ### Solving problems with large repositories:
 
- 1.The case with long histories:
+1. The case with long histories:
  - Sometimes we need keep the history of our repository intact. In that case to solve complications while cloning repository we can clone just n latest commits. We can use:
 
 
@@ -30,32 +46,19 @@ This operation creates so called shallow clone and can save some time cloning re
 ```bash
 git clone [remote url] --branch [branch_name] --single-branch [folder]
 ```
-It cleans just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
+It clones just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
 
-- Lastly, if we have time for that, we can try cleaning up our repo. For that the useful function might be "filter-branch". By using this command you are able to go through your history and try to indemnify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
+- Lastly, if we have time for that, we can try cleaning up our repo. For that, the useful function might be "filter-branch". By using this command you are able to go through your history and try to indemnify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
 
 2. Case with huge binary assets:
 
-- There might be solutions for large files in repositories. But if we know that we are going to work with huge binary assets then we should use Large File Storage (LFS)
+- There might be solutions for large files in repositories. But if we know that we are going to work with huge binary assets, then we should use Large File Storage (LFS).
+
 
 # Git Large File Storage (LFS)
 
-![](logo.png)
-
-## Table of Contents
-
-- [What is Git LFS?](#what-is-git-lfs)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Benefits](#benefits)
-- [Practical Examples](#practical-examples)
-- [Troubleshooting](#troubleshooting)
-- [Conclusion](#conclusion)
-- [Resources](#resources)
-
 ## What is Git LFS?
-- [Introduction](#what-is-git-lfs)
+
   - Open-source Git extension designed to handle large files more efficiently in Git repositories
 
 ## Installation
@@ -76,14 +79,45 @@ It cleans just one specified branch from our repo without other branches. It mig
     ```bash
     *.mp4 filter=lfs diff=lfs merge=lfs -text
     ```
-- [Remote Repository Considerations](#configuration)
+
+  - Alternatively, you can specify which files should be handled by Git LFS by using the git lfs track command:
+    ```bash
+    git lfs track "*.mp4"
+    ```
+
+  - Do not forget to stage and commit any changes to the .gitattributes file:
+    ```bash
+    git add .gitattributes
+    git commit -m "Track .mp4 files by Git LFS"
+    ```
+
+- [Folder Tracking](#configuration)
+  - To track the whole folder you can use the following command: 
+    ```bash
+    git lfs track "foldername/*"
+    ```
+
+  - After running this command, you should see the following in the .gitattributes file:
+    ```bash
+    foldername/* filter=lfs diff=lfs merge=lfs -text
+    ```
+  - Stage and commit: 
+    ```bash
+    git add .gitattributes
+    git commit -m "Track files in foldername by Git LFS"
+    ```
+
+- [Remote Repository](#configuration)
   - If you are using a remote repository, make sure it has Git LFS support to properly manage large files.
+  - Also do not forget to push the changes of the .gitattributes file to the remote rpository:
+    ```bash
+    git push
+    ```
 
 ## Usage
-- [After Configuration](#usage)
-  - After a successful configuration, you can track and commit files as usual.
-- [Automated Tracking](#usage)
-  - Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
+
+- After a successful configuration, you can track and commit files as usual.
+- Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
 
 ## Benefits
 - [Reduced Repository Size](#benefits)
@@ -95,8 +129,23 @@ It cleans just one specified branch from our repo without other branches. It mig
 - [Seamless Integration](#benefits)
   - Git LFS integrates well with most common Git hosting services like GitHub.
 
-## Practical Examples
-- [Example Usage Scenarios](#practical-examples)
+## Practical Example
+- [Example Usage](#practical-example)
+
+    ```bash
+    git lfs install
+
+    git lfs track "*.jpg"
+
+    git add .gitattributes
+    git commit -m "Add .gitattributes for Git LFS tracking"
+
+    git add large_file.jpg
+    git commit -m "Add a large image file"
+
+    git push origin main
+
+    ```
 
 ## Troubleshooting
 - [Troubleshooting Guide](#troubleshooting)
@@ -113,7 +162,7 @@ It cleans just one specified branch from our repo without other branches. It mig
   - Check Git error logs for specific error messages that can help resolve the problem.
 
 ## Conclusion
-- [Final Thoughts](#conclusion)
+- To sum up, Git Large File Storage (LFS) is an effective solution for handling large files in Git repositories. When dealing with repositories that have long commit histories or repositories with large binary assets, Git LFS makes the tracking of these files more efficient. It reduces repository size, accelerates cloning and fetching, and integrates well with Git hosting services. By using Git LFS, one can maintain the efficiency of their version control workflow, ensuring a more productive collaboration.
 
 ## Resources
 - [Git LFS GitHub Repository](#resources)
@@ -127,3 +176,5 @@ It cleans just one specified branch from our repo without other branches. It mig
   - [Smaller Repository Size](https://jasonzurita.com/smaller-repo-size-using-git-lfs/)
 - [GitHub Markdown](#resources)
   - [GitHub Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Picture](#resources)
+  - https://jasonzurita.com/smaller-repo-size-using-git-lfs/
