@@ -40,9 +40,9 @@
   - If you are using a remote repository, make sure it has Git LFS support to properly manage large files.
 
 ## Usage
-- [After Configuration](#usage)
+
   - After a successful configuration, you can track and commit files as usual.
-- [Automated Tracking](#usage)
+
   - Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
 
 ## Benefits
