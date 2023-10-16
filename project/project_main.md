@@ -9,14 +9,14 @@ Besides that, platforms that provide various functionalities related to version 
 
 ### We can distinguish two types of big repositories:
 
-1. Repositories with long history (containing a lont of commits over long periods of time)
+1. Repositories with long history (containing a lot of commits over long period of time)
 
 2. Repositories which include huge binary assets (usually refers to files that contain something	 else than plain text, those can be: compressed files, videos, images, or any other non-text data).
 
 ### Solving problems with large repositories:
 
  1.The case with long histories:
- - Sometimes we need keep the history of our repository intact. In that case to solve complications while cloning repository we can clone just n latest commits. We can use:
+ - Sometimes we need to keep the history of our repository intact. In that case to solve complications while cloning repository we can clone just n latest commits. We can use:
 
 
 ```bash
@@ -30,9 +30,9 @@ This operation creates so called shallow clone and can save some time cloning re
 ```bash
 git clone [remote url] --branch [branch_name] --single-branch [folder]
 ```
-It cleans just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
+It clones just one specified branch from our repo without other branches. It might be useful when our repo has large amount of branches and we would like to work just on one or few of them. 
 
-- Lastly, if we have time for that, we can try cleaning up our repo. For that the useful function might be "filter-branch". By using this command you are able to go through your history and try to indemnify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
+- Lastly, if we have time for that, we can try cleaning up our repo. For that the useful function might be "filter-branch". By using this command you are able to go through your history and try to indentify big objects and trying to solve problems manually. While using such a command we rewrite the history of our project (commit ids change). Which might create additional difficulties for other developers working on this project.
 
 2. Case with huge binary assets:
 
