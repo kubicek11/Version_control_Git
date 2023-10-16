@@ -162,7 +162,7 @@ It clones just one specified branch from our repo without other branches. It mig
   - Check Git error logs for specific error messages that can help resolve the problem.
 
 ## Conclusion
-- To sum up, Git Large File Storage (LFS) is an effective solution for handling large files in Git repositories. When dealing with repositories that have long commit histories or repositories with large binary assets, Git LFS makes the tracking of these files more efficient. It reduces repository size, accelerates cloning and fetching, and integrates well with Git hosting services. By using Git LFS, developers can maintain the efficiency of their version control workflow, which ensures a more productive collaboration.
+- To sum up, Git Large File Storage (LFS) is an effective solution for handling large files in Git repositories. When dealing with repositories that have long commit histories or repositories with large binary assets, Git LFS makes the tracking of these files more efficient. It reduces repository size, accelerates cloning and fetching, and integrates well with Git hosting services. By using Git LFS, one can maintain the efficiency of their version control workflow, ensuring a more productive collaboration.
 
 ## Resources
 - [Git LFS GitHub Repository](#resources)
