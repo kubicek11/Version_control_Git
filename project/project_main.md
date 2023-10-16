@@ -11,7 +11,7 @@
   - [Configuration](#configuration)
   - [Usage](#usage)
   - [Benefits](#benefits)
-  - [Practical Examples](#practical-examples)
+  - [Practical Example](#practical-example)
   - [Troubleshooting](#troubleshooting)
   - [Conclusion](#conclusion)
   - [Resources](#resources)
@@ -79,14 +79,45 @@ It clones just one specified branch from our repo without other branches. It mig
     ```bash
     *.mp4 filter=lfs diff=lfs merge=lfs -text
     ```
-- [Remote Repository Considerations](#configuration)
+
+  - Alternatively, you can specify which files should be handled by Git LFS by using the git lfs track command:
+    ```bash
+    git lfs track "*.mp4"
+    ```
+
+  - Do not forget to stage and commit any changes to the .gitattributes file:
+    ```bash
+    git add .gitattributes
+    git commit -m "Track .mp4 files by Git LFS"
+    ```
+
+- [Folder Tracking](#configuration)
+  - To track the whole folder you can use the following command: 
+    ```bash
+    git lfs track "foldername/*"
+    ```
+
+  - After running this command, you should see the following in the .gitattributes file:
+    ```bash
+    foldername/* filter=lfs diff=lfs merge=lfs -text
+    ```
+  - Stage and commit: 
+    ```bash
+    git add .gitattributes
+    git commit -m "Track files in foldername by Git LFS"
+    ```
+
+- [Remote Repository](#configuration)
   - If you are using a remote repository, make sure it has Git LFS support to properly manage large files.
+  - Also do not forget to push the changes of the .gitattributes file to the remote rpository:
+    ```bash
+    git push
+    ```
 
 ## Usage
-- [After Configuration](#usage)
-  - After a successful configuration, you can track and commit files as usual.
-- [Automated Tracking](#usage)
-  - Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
+
+- After a successful configuration, you can track and commit files as usual.
+- Whenever you add or commit large files with extensions specified in .gitattributes, Git will automatically use Git LFS to manage them.
 
 ## Benefits
 - [Reduced Repository Size](#benefits)
@@ -98,9 +129,22 @@ It clones just one specified branch from our repo without other branches. It mig
 - [Seamless Integration](#benefits)
   - Git LFS integrates well with most common Git hosting services like GitHub.
 
-## Practical Examples
-- [Example Usage Scenarios](#practical-examples)
+## Practical Example
+- [Example Usage Scenario](#practical-example)
 
+    ```bash
+    git lfs install
+
+    git lfs track "*.jpg"
+
+    git add large_file.jpg
+
+    git commit -m "Add a large image file"
+
+    git push origin main
+
+    ```
+    
 ## Troubleshooting
 - [Troubleshooting Guide](#troubleshooting)
   - Ensure that Git LFS is installed and configured on your system by running:
@@ -116,7 +160,7 @@ It clones just one specified branch from our repo without other branches. It mig
   - Check Git error logs for specific error messages that can help resolve the problem.
 
 ## Conclusion
-- [Final Thoughts](#conclusion)
+- To sum up, Git Large File Storage (LFS) is an effective solution for handling large files in Git repositories. When dealing with repositories that have long commit histories or repositories with large binary assets, Git LFS makes the tracking of these files more efficient. It reduces repository size, accelerates cloning and fetching, and integrates well with Git hosting services. By using Git LFS, developers can maintain the efficiency of their version control workflow, which ensures a more productive collaboration.
 
 ## Resources
 - [Git LFS GitHub Repository](#resources)
