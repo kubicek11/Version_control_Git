@@ -1,4 +1,4 @@
-# seminar_2
+# Version control with Git
 
 This repository is related to course Version Control with Git (JEM 234).
 
