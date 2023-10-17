@@ -172,6 +172,7 @@ It clones just one specified branch from our repo without other branches. It mig
 - [Git LFS x GitHub](#resources)
   - Git LFS x GitHub: [GitHub Documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage)
 - [Other Sources](#resources)
+  - [Atlassian Git Big Repositories](https://www.atlassian.com/git/tutorials/big-repositories)
   - [Atlassian Git LFS Tutorial](https://www.atlassian.com/git/tutorials/git-lfs)
   - [Smaller Repository Size](https://jasonzurita.com/smaller-repo-size-using-git-lfs/)
 - [GitHub Markdown](#resources)
